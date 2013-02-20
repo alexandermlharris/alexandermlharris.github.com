@@ -13,7 +13,7 @@ While looking into the execution log, I found that there were no records older t
 
 I did a bit of digging and found that by default the Reporting Services instance will only keep the most recent 60 days in the execution log.
 
-This duration can be configured via the **`ExecutionLogDaysKept`** advanced property which can be set on the server. The value is the time in days for log entries to be kept. Valid values are in the range: `0` to `2,147,483,647`, where a `0` indicates that entries are never deleted.
+This duration can be configured via the `ExecutionLogDaysKept` advanced property which can be set on the server. The value is the time in days for log entries to be kept. Valid values are in the range: `0` to `2,147,483,647`, where a `0` indicates that entries are never deleted.
 
 The [Server Properties (Advanced Page) - Reporting Services](http://technet.microsoft.com/en-us/library/bb934303%28v=sql.105%29.aspx) MSDN page gives the details of this, and many other advanced server confiuratio parameters. You can access them as follows:
 
