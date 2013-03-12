@@ -18,6 +18,7 @@ This page contains links to handy tools which I've grown used to over time. Most
 
 ##Source control
 - [Tortoise SVN](http://tortoisesvn.net/) - The easiest to use Window's shell SVN client I've found.
+- [AnkhSVN](http://ankhsvn.open.collab.net) - Visual Studio SVN plugin which pulls SVN into the IDE.
 - [Github for Windows](http://windows.github.com/) - A nice, modern visual GIT client, which integrates with your github account making basic git tasks easy.
 
 ##SQL
