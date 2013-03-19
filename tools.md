@@ -10,7 +10,7 @@ This page contains links to handy tools which I've grown used to over time. Most
 
 ##Text Editing
 - [Notepad++](http://notepad-plus-plus.org/) - My go-to text editor of choice when good old `notepad.exe` isn't up to the job. I particularly like the simple to use but powerful search / search & replace options.
-- [MarkdownPad](http://markdownpad.com/) - A clean and simple side-by-side editor for authoring and previewing Markdown syntax text files.
+- [MarkdownPad](http://markdownpad.com/) - A clean and simple side-by-side editor for authoring and previewing Markdown syntax text files. Usually have [PanDoc](http://johnmacfarlane.net/pandoc/) nearby too, for converting markdown into other formats, such as MediaWiki for the company wiki etc.
 
 ##Development
 - [P4Merge](http://www.perforce.com/product/components/perforce_visual_merge_and_diff_tools) - My go-to visual diff/merge tool. In my opinion the best looking merge tool I've used, for me it makes even 3 way merges look clear.
