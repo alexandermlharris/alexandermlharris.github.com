@@ -1,7 +1,7 @@
 ---
 layout: post
 category : development
-tags : [microsoft, asp.net, mvc.net, c#, font]
+tags : [microsoft, mvc.net, c#]
 ---
 {% include JB/setup %}
 

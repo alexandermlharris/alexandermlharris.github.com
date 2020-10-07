@@ -2,7 +2,7 @@
 layout: post
 title: SSRS Font Colour with a Placeholder
 category : development
-tags : [ssrs]
+tags : [microsoft, ssrs]
 ---
 {% include JB/setup %}
 

@@ -1,7 +1,8 @@
 ---
 layout: post
+title: SSRS Exceution Log: Days Kept
 category : development
-tags : [microsoft, ssrs, reporting]
+tags : [microsoft, ssrs]
 ---
 {% include JB/setup %}
 
