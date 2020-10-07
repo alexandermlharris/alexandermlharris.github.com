@@ -12,7 +12,7 @@ The project was based on a Twitter Bootstrap template (Unicorn Admin) which incl
 ### Deploying the fonts ###
 First of all, you need to make sure Visual Studio is deploying the fonts when you publish. Ensure all are included in the project, then right click on each and set 
 
-	Build Action: 				Content
+	Build Action: 			Content
 	Copy to Output Directory: 	Copy if newer
 
 This will ensure that your fonts make it to the web server.
