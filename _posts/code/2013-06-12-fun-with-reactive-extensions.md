@@ -9,7 +9,7 @@ Recently at work I sent out a report before the data was ready because I forgot 
 
 Being a Lazy Coder™, I thought I’d spend a little time writing a tray notification app to pull status updates from a web service we have and pop up notifications about the ETL status, saving much time over checking a webpage once a day!
 
-I also thought this would be a perfect opportunity to fiddle with the C# [reactive extensions|http://msdn.microsoft.com/en-us/data/gg577609.aspx] as it seemed like a good fit.
+I also thought this would be a perfect opportunity to fiddle with the C# [reactive extensions](http://msdn.microsoft.com/en-us/data/gg577609.aspx) as it seemed like a good fit.
 
 What I wanted to achieve was:
 
@@ -19,7 +19,7 @@ What I wanted to achieve was:
 
 ## Tray App & Notifications
 
-Creating a tray app with notifications was easy, I followed the excellent minimal tray applications template [here|http://alanbondo.wordpress.com/2008/06/22/creating-a-system-tray-app-with-c/].
+Creating a tray app with notifications was easy, I followed the excellent minimal tray applications template [here](http://alanbondo.wordpress.com/2008/06/22/creating-a-system-tray-app-with-c/).
 
 Notification balloons are then simply a case of:
 
