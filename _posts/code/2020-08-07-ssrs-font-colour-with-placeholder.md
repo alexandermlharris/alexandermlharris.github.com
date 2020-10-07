@@ -1,6 +1,5 @@
 ---
 layout: post
-title: SSRS Font Colour with a Placeholder
 category : development
 tags : [microsoft, ssrs]
 ---
