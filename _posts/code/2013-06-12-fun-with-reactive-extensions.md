@@ -1,7 +1,7 @@
 ---
 layout: post
 category : development
-tags : [microsoft, c#, linq, reactive excensions]
+tags : [c#, linq, reactive excensions]
 ---
 {% include JB/setup %}
 

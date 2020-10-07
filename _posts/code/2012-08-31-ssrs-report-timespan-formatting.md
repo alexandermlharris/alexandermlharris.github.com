@@ -2,7 +2,7 @@
 layout: post
 title: SSRS Report Timespan Formatting
 category : development
-tags : [microsoft, ssrs]
+tags : [ssrs]
 ---
 
 {% include JB/setup %}

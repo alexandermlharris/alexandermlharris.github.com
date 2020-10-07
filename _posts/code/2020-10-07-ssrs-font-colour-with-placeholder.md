@@ -1,7 +1,7 @@
 ---
 layout: post
 category : development
-tags : [microsoft, ssrs]
+tags : [ssrs]
 ---
 {% include JB/setup %}
 

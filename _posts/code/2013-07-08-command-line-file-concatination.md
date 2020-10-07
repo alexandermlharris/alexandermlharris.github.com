@@ -1,7 +1,7 @@
 ---
 layout: post
 category : development
-tags : [microsoft, command line]
+tags : [command line]
 ---
 {% include JB/setup %}
 
