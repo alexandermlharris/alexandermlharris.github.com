@@ -13,7 +13,7 @@ Googling around, I came across [How to display a time span of seconds in hh:mm:s
 I ended up finding several resources, some of which linked back to the SO question and pulled together a number of difference approaches. My original answer is on the SO question for future reference, but for reference, the different options are given here
 
 
-##Simple Formula
+## Simple Formula
 
 Like [Chriss Latta's accepted answer](http://stackoverflow.com/a/5332844/15667), you can use a single formula on the field, such the following from [this thread][1], (which also links back to the SOquestion)!
 
@@ -25,7 +25,7 @@ If you need to pad each time part to 2 characters (I did) you can wrap a `RIGHT(
 
 This works great, but means duplicating your code if there is more than one field in the report which needs formatting this way.
 
-##Code Behind
+## Code Behind
 
 Another approach, also suggested in this thread, is to use `TimeSpan.FromSeconds`([doc][2]), and there is an implementation of that on this [blog][3], using custom code behind in the report.
 
