@@ -17,7 +17,8 @@ One of our webapps allows for attaching a file when creating a new “Widget”.
 
 ### View
 
-    @Html.TextBoxFor(model =&gt; model.Document, new { type = "file" })
+    @Html.TextBoxFor(model => model.Document, new { type = "file" })
+
 ### Controller
 
     [HttpPost]
