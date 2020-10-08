@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Debugging log4net
 category : development
 tags : [log4net, debugging]
 ---
