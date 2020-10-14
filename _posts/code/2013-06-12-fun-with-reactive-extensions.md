@@ -23,20 +23,24 @@ Creating a tray app with notifications was easy, I followed the excellent minima
 
 Notification balloons are then simply a case of:
 
-    trayIcon.ShowBalloonTip(100000, "Title Text", "Description Text", ToolTipIcon.Info);
+```csharp
+trayIcon.ShowBalloonTip(100000, "Title Text", "Description Text", ToolTipIcon.Info);
+```
 
 ## Reactive Extensions to work
 
 Using Rx, the work of periodically checking the web service, and notifying my application of changes in status was really simple, and elegant. The core code is below:
 
-    // Create a 1 minute *interval* sequence (not a timer which only fires once...).
-    var source = Observable.Interval(TimeSpan.FromSeconds(60))
-    // Set the initial seq value so that it runs immediatly.
-                                    .StartWith(-1)
-    // Get the current status each minute.
-                                    .Select(x => GetStatus())
-    // Ignore duplicates, so won't notify unless the status changes.
-                                    .DistinctUntilChanged();
+```csharp
+// Create a 1 minute *interval* sequence (not a timer which only fires once...).
+var source = Observable.Interval(TimeSpan.FromSeconds(60))
+// Set the initial seq value so that it runs immediatly.
+                                .StartWith(-1)
+// Get the current status each minute.
+                                .Select(x => GetStatus())
+// Ignore duplicates, so won't notify unless the status changes.
+                                .DistinctUntilChanged();
+```
 
 This does the following:
 
@@ -49,4 +53,6 @@ To make this work I have a set of pre-constructed instances of my `ETLStatus` cl
 
 So now I have an Observable sequence which signals on ETL status changes. Now I subsubscribe to this sequence and push tray noitifications which pop up a baloon and set the tray icon.
 
-    var sub = source.Subscribe(next => Notify(next));
+```csharp
+var sub = source.Subscribe(next => Notify(next));
+```
