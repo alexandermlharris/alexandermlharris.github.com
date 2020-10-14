@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SSRS Exceution Log: Days Kept
+title: SSRS Exceution Log Days Kept
 category : development
 tags : [ssrs]
 ---
