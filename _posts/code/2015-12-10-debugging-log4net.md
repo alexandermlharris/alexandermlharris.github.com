@@ -14,24 +14,28 @@ From that article a few simple `app.config` / `web.config` changes are all that 
 
 First we enable logging / tracing within log4net itself by adding the following appSetting:
 
-    <appSettings>
-        ...
-        <add key="log4net.Internal.Debug" value="true" />
-        ...
-    </appSettings>
+```xml
+<appSettings>
+    ...
+    <add key="log4net.Internal.Debug" value="true" />
+    ...
+</appSettings>
+```
 
 Next, we enable tracing for the application by adding the following element:
 
-    <system.diagnostics>
-        <trace autoflush="true">  
-        <listeners>
-            <add
-            name="textWriterTraceListener"
-            type="System.Diagnostics.TextWriterTraceListener"
-            initializeData="appTrace.txt" />
-        </listeners>
-        </trace>
-    </system.diagnostics>
+```xml
+<system.diagnostics>
+    <trace autoflush="true">  
+    <listeners>
+        <add
+        name="textWriterTraceListener"
+        type="System.Diagnostics.TextWriterTraceListener"
+        initializeData="appTrace.txt" />
+    </listeners>
+    </trace>
+</system.diagnostics>
+```
 
 Now, log4net will write debug information to the trace, and this will be captured and written to the `appTrace.txt` file for you to view later.
 
