@@ -10,25 +10,31 @@ One of our webapps allows for attaching a file when creating a new “Widget”.
 
 ### View Model
 
-    public class WidgetCreateVM
-    {
-        public HttpPostedFileBase Document { get; set; }
-    }
+```csharp
+public class WidgetCreateVM
+{
+    public HttpPostedFileBase Document { get; set; }
+}
+```
 
 ### View
 
-    @Html.TextBoxFor(model => model.Document, new { type = "file" })
+```csharp
+@Html.TextBoxFor(model => model.Document, new { type = "file" })
+```
 
 ### Controller
 
-    [HttpPost]
-    public ActionResult Create(WidgetCreateVM vm)
+```csharp
+[HttpPost]
+public ActionResult Create(WidgetCreateVM vm)
+{
+    if(vm.Document != null)
     {
-        if(vm.Document != null)
-        {
-            // Do stuff
-        }
+        // Do stuff
     }
+}
+```
 
 ## Change Request
 There was a task to allow attaching multiple files rather than just the single one, and I wasn’t sure of the best approach. I’d used fancy javascript multi-file upload utilities in the past, but I wanted something simpler (for now). A search around turned up [this article](http://haacked.com/archive/2010/07/16/uploading-files-with-aspnetmvc.aspx/) from Phil Haack where he shows how easy it is.
