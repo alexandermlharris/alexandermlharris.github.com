@@ -11,8 +11,9 @@ This left me with around 180 .csv files, one per day of data, which I needed to 
 
 The thought of 180 “Copy + Paste” operations filled me with dread and I was reaching to google for “Windows File Concatenate” when my boss pointed out the following little gem:
 
-
-    type *.csv >> combined.csv
+```console
+type *.csv >> combined.csv
+```
 
 Run this from the command line and it’ll pipe 
 
