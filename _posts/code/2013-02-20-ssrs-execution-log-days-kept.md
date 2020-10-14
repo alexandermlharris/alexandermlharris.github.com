@@ -4,6 +4,7 @@ title: SSRS Exceution Log: Days Kept
 category : development
 tags : [ssrs]
 ---
+
 {% include JB/setup %}
 
 I recently was trying to collect usage ingormation for our Microsoft SQL Server Reporting Services installation.
