@@ -11,22 +11,24 @@ I was adding some features to a bare-bones WinForms app which I’m fiddling and
 
 A quick google turned up [this question over on Stack Overflow](https://stackoverflow.com/questions/11873378/adding-placeholder-text-to-textbox). This shows that there’s not an out-of-the box WinForms solution (no designer property which does this), but can be done by handling the `OnFocus` and `LoseFocus` events. For example, see the following psudo-code from the [accepted answer.](http://stackoverflow.com/a/11873521/15667)
 
-    Textbox myTxtbx = new Textbox();
-    myTxtbx.Text = "Enter text here...";
+```csharp
+Textbox myTxtbx = new Textbox();
+myTxtbx.Text = "Enter text here...";
 
-    myTxtbx.OnFocus += OnFocus.EventHandle(RemoveText);
-    myTxtbx.LoseFocus += LoseFocus.EventHandle(AddText);
+myTxtbx.OnFocus += OnFocus.EventHandle(RemoveText);
+myTxtbx.LoseFocus += LoseFocus.EventHandle(AddText);
 
-    public RemoveText(object sender, EventArgs e)
-    {
-        myTxtbx.Text = "";
-    }
+public RemoveText(object sender, EventArgs e)
+{
+    myTxtbx.Text = "";
+}
 
-    public AddText(object sender, EventArgs e)
-    {
-        if(myTxtbx.Text == "")
-            myTxtbx.Text = "Enter text here...";
-    }
+public AddText(object sender, EventArgs e)
+{
+    if(myTxtbx.Text == "")
+        myTxtbx.Text = "Enter text here...";
+}
+```
 
 # The dirty way
 
@@ -34,12 +36,16 @@ This seemed a little clunky for what I’d hoped would be a one liner. [Another 
 
 First, declare the external function from the windows .dll:
 
-    private const int EM_SETCUEBANNER = 0x1501;
+```csharp
+private const int EM_SETCUEBANNER = 0x1501;
 
-    [DllImport("user32.dll", CharSet = CharSet.Auto)]
-    private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)]string lParam);
+[DllImport("user32.dll", CharSet = CharSet.Auto)]
+private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [MarshalAs(UnmanagedType.LPWStr)]string lParam);
+```
 
 Then, call this function passing in the handle of the text box in question and the text to send, as follows:
 
-    SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Username");
-    SendMessage(textBox2.Handle, EM_SETCUEBANNER, 0, "Password");
+```csharp
+SendMessage(textBox1.Handle, EM_SETCUEBANNER, 0, "Username");
+SendMessage(textBox2.Handle, EM_SETCUEBANNER, 0, "Password");
+```
