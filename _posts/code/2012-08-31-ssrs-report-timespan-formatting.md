@@ -18,11 +18,15 @@ I ended up finding several resources, some of which linked back to the SO questi
 
 Like [Chriss Latta's accepted answer](http://stackoverflow.com/a/5332844/15667), you can use a single formula on the field, such the following from [this thread][1], (which also links back to the SOquestion)!
 
-    =int(sum(Fields!Sec_Online.Value)/3600) & ":" & int((sum(Fields!Sec_Online.Value) Mod 3600)/60) & ":" & (sum(Fields!Sec_Online.Value) Mod 3600) Mod 60
+```VB
+=int(sum(Fields!Sec_Online.Value)/3600) & ":" & int((sum(Fields!Sec_Online.Value) Mod 3600)/60) & ":" & (sum(Fields!Sec_Online.Value) Mod 3600) Mod 60
+```
 
 If you need to pad each time part to 2 characters (I did) you can wrap a `RIGHT("0" & {X}, 2)` around each sub-section, where `{x}` indicates one of the individual calculations in the above formula. IE:
 
-    =RIGHT("0" & sum(Fields!Sec_Online.Value)/3600), 2) & ...
+```VB
+RIGHT("0" & sum(Fields!Sec_Online.Value)/3600), 2) & ...
+```
 
 This works great, but means duplicating your code if there is more than one field in the report which needs formatting this way.
 
@@ -34,21 +38,25 @@ I ended up using the custom code approach (as I had lots of fields which I neede
 
 I added some [custom code][3] to the report as follows which pads all values to at least 2 characters, and allows hours to hours count up > 23.
 
-    Public Function ConvertSecondsToHourMinSec(ByVal intTotalSeconds) As String
-    	Dim hours As String =INT(intTotalSeconds/3600)
-    	If Len(hours) < 2 Then
-    		hours = RIGHT(("0" & hours), 2)
-    	End If
-    	Dim mins As String = RIGHT("0" & INT((intTotalSeconds MOD 3600)/60), 2)
-    	Dim secs AS String = RIGHT("0" & ((intTotalSeconds MOD 3600) MOD 60), 2)
-    
-    	ConvertSecondsToHourMinSec = hours & ":" & mins & ":" & secs
-    
-    End Function
+```VB
+Public Function ConvertSecondsToHourMinSec(ByVal intTotalSeconds) As String
+    Dim hours As String =INT(intTotalSeconds/3600)
+    If Len(hours) < 2 Then
+        hours = RIGHT(("0" & hours), 2)
+    End If
+    Dim mins As String = RIGHT("0" & INT((intTotalSeconds MOD 3600)/60), 2)
+    Dim secs AS String = RIGHT("0" & ((intTotalSeconds MOD 3600) MOD 60), 2)
+
+    ConvertSecondsToHourMinSec = hours & ":" & mins & ":" & secs
+
+End Function
+```
 
 and then called this from each cell in questions as follows:
 
-    =code.ConvertSecondsToHourMinSec(Fields!MyField.Value)
+```VB
+=code.ConvertSecondsToHourMinSec(Fields!MyField.Value)
+```
 
   [1]: http://social.msdn.microsoft.com/Forums/is/sqlreportingservices/thread/99eebfd7-4ba7-4242-ab5e-a327586694de
   [2]: http://msdn.microsoft.com/en-us/library/system.timespan.fromseconds.aspx
