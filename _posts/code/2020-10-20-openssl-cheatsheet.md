@@ -14,3 +14,12 @@ There's a lot of useful stuff here, ones we needed were:
 ~~~bash
 openssl rsa -in privateKey.key -check
 ~~~
+
+ *It wasn't* - we used `PuttyGen` to export as a SSL format pem file private key.
+
+
+**Generate the matching public key in SSL format:**
+
+~~~bash
+openssl rsa -in key.pem -pubout -out pubkey.pem
+~~~
