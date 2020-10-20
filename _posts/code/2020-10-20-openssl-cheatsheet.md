@@ -16,7 +16,11 @@ openssl rsa -in privateKey.key -check
 ~~~
 
  *It wasn't* - we used `PuttyGen` to export as a SSL format pem file private key.
-
+ 
+ ~~~
+ Actions -> Load Key
+ Converstions (Menu) -> Export OpenSSH Key
+ ~~~
 
 **Generate the matching public key in SSL format:**
 
