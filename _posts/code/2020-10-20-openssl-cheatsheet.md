@@ -15,7 +15,7 @@ There's a lot of useful stuff here, ones we needed were:
 openssl rsa -in privateKey.key -check
 ~~~
 
- *It wasn't* - we used `PuttyGen` to export as a SSL format pem file private key.
+ *It wasn't* - we used [PuttyGen](https://www.puttygen.com/) to export as a SSL format pem file private key.
  
  ~~~
  Actions -> Load Key
