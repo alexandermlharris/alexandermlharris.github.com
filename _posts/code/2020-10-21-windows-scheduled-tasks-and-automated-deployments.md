@@ -53,3 +53,8 @@ schtasks /delete /tn "$ScheduledTaskName" /F
 #2 - setup the new scheduled task
 schtasks /create /tn "$ScheduledTaskName" /RU $ScheduledTaskUserName /RP $ScheduledTaskUserPassword /XML "$xmlFile"
 ~~~
+
+# 3. Octopus Variables
+If you are running these steps in Octopus Deploy, you can setup the project variables to contain the specific details, making the script re-usable.
+
+![Octopus Variables](/assets/2020-10-21-windows-scheduled-tasks-and-automated-deployments-variables.png)
