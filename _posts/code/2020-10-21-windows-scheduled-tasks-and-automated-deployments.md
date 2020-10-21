@@ -14,17 +14,18 @@ We use the windows task scheduler to run some of our internal apps, which we dep
 # 1. Waiting for a running task
 
 ~~~powershell
+# Set $ScheduledTaskName in your script, or it gets mapped automatically from an octopus variable.
 while($true)
 { 
 	$res = (schtasks /query /tn "$ScheduledTaskName");
    	
-    if($res -eq $null -or $res.Count -lt 4 -or -not $res[4].Contains("Running"))
-    { 
-    	break;
-    }
+        if($res -eq $null -or $res.Count -lt 4 -or -not $res[4].Contains("Running"))
+        { 
+    	    break;
+        }
     
 	Write-Host "Task is running, waiting..."; 
-    Start-Sleep -Seconds 5
+        Start-Sleep -Seconds 5
 }
 ~~~
 
