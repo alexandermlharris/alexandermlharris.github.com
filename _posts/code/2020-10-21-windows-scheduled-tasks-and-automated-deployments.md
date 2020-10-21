@@ -10,7 +10,23 @@ We use the windows task scheduler to run some of our internal apps, which we dep
 
 1. We want the deployment to wait if the scheduled task is currently running.
 2. We want a deployment to setup the scheduled task if it's a new environment
-3. We want the scheduled task to be enabled after deployment.
+
+# 1. Waiting for a running task
+
+~~~powershell
+while($true)
+{ 
+	$res = (schtasks /query /tn "$ScheduledTaskName");
+   	
+    if($res -eq $null -or $res.Count -lt 4 -or -not $res[4].Contains("Running"))
+    { 
+    	break;
+    }
+    
+	Write-Host "Task is running, waiting..."; 
+    Start-Sleep -Seconds 5
+}
+~~~
 
 # 2. Creating the scheduled task
 
