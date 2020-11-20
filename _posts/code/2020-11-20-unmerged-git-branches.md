@@ -6,7 +6,7 @@ tags : [git, tips]
 
 {% include JB/setup %}
 
-I wanted to figure out which feature branches were still to be merged into develop on git, and found the following:
+I wanted to figure out which feature branches were still to be merged into develop on git, and found the following from https://stackoverflow.com/a/12276041/15667:
 
 ~~~bash
 git branch -r --no-merged origin/develop
