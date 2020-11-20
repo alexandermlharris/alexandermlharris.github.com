@@ -21,7 +21,7 @@ Ignoring my "experimenal" branch, I can see that
 * Feature 1 & Feature 2 are still work in progress and not in develop.
 * Release 4.6 is open and hasn't been merged back yet.
 
-If I want to get more info, I found the following
+If I want to get more info, I found the following, from: https://gist.github.com/l15n/3103708#gistcomment-3273142
 
 ~~~bash
 for branch in `git branch -r --no-merged origin/develop`;do echo -e "`git show --name-only --format="%>(25)%an | %<(25)%ar" $branch | head -n 1`" $branch; done | sort -r
