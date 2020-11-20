@@ -17,9 +17,10 @@ This page contains links to handy tools which I've grown used to over time. Most
 - [WinMerge](http://winmerge.org/) - Great general purpose diff tool. I usually use this for the [folder diff](http://manual.winmerge.org/Quick_start.html#d0e618) features, which is great for deploying local files to a web server or similar tasks.
 
 ## Source control
-- [Tortoise SVN](http://tortoisesvn.net/) - The easiest to use Window's shell SVN client I've found.
-- [AnkhSVN](http://ankhsvn.open.collab.net) - Visual Studio SVN plugin which pulls SVN into the IDE.
+- [Source Tree](https://www.sourcetreeapp.com/) - My go to visual git client. Has the best git graph visulization (for me anyway!) of all I've tried.
+- [Tortoise Git](https://tortoisegit.org/) - It's like Tortoise SVN... but... git!? Super handy for those times you find yourself doing file manipulation outside of an IDE or other tool.
 - [Github for Windows](http://windows.github.com/) - A nice, modern visual GIT client, which integrates with your github account making basic git tasks easy.
+- [Tortoise SVN](http://tortoisesvn.net/) - The easiest to use Window's shell SVN client I've found.
 
 ## SQL
 - [Redgate SQL Compare](http://www.red-gate.com/products/sql-development/sql-compare/) - A simply brilliant tool for comparing MS-SQL database schemas and deploying changes. Costly, but worth it's weight in gold at times.
