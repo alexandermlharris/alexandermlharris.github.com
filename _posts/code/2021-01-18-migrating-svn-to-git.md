@@ -1,7 +1,7 @@
 ---
 layout: post
 category : development
-tags : [git, tips]
+tags : [git, tips, svn]
 ---
 
 {% include JB/setup %}
