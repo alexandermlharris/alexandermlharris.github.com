@@ -22,17 +22,19 @@ https://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositorie
 https://stackoverflow.com/a/10548919/15667
 
 ~~~bash
-	cd path/to/project-b
-	git remote add project-a /path/to/project-a
-	git fetch project-a --tags
-	git merge --allow-unrelated-histories project-a/master # or whichever branch you want to merge
-	git remote remove project-a
+cd path/to/project-b
+git remote add project-a /path/to/project-a
+git fetch project-a --tags
+git merge --allow-unrelated-histories project-a/master # or whichever branch you want to merge
+git remote remove project-a
 ~~~
 
 In case you want to put project-a into a subdirectory, you can use git-filter-repo (filter-branch is discouraged). Run the following commands before the commands above:
 
-	cd path/to/project-a
-	git filter-repo --to-subdirectory-filter project-a
+~~~bash
+cd path/to/project-a
+git filter-repo --to-subdirectory-filter project-a
+~~~
 	
 https://gist.github.com/x-yuri/9890ab1079cf4357d6f269d073fd9731
 https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html
